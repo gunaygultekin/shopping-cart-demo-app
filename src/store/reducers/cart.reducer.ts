@@ -31,10 +31,16 @@ function pushToCart(cart: ICartState, payload: Product): ICartState {
 function pullFromCart(cart: ICartState, payload: Product): ICartState {
   const targetItem = cart.shoppingCardItems.find(item => item.id === payload.id);
   if (targetItem) {
-    payload.amount += 1;
-    cart.count -= 1;
-    cart.sum -= payload.price * 1;
-    targetItem.quantity -= 1;
+    if (targetItem.quantity <= 1) {
+      // quantity must be greater than 0
+      targetItem.quantity = 1;
+      alert('MUST be greater than 1');
+    } else {
+      targetItem.quantity -= 1;
+      payload.amount += 1;
+      cart.count -= 1;
+      cart.sum -= payload.price * 1;
+    }
   }
   return cart;
 }
@@ -47,7 +53,8 @@ function removeFromCart(cart: ICartState, payload: Product): ICartState {
     cart.count -= payload.quantity;
     cart.sum -= payload.quantity * payload.price;
     payload.amount += payload.quantity;
-    payload.quantity = 0;
+    payload.quantity = 1; // Bug-fix: after removing from the cart, the user adds again the same product,
+                          // invalid amount is shown on list in cart
   }
   return cart;
 }
