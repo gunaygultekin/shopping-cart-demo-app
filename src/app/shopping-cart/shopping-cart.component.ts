@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../store/state/app.state';
 import { Store } from '@ngrx/store';
-import { Cart } from '../../models/cart.model';
 import { Observable } from 'rxjs/index';
+import { ICartState } from '../../store/state/cart.state';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/index';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  carts: Observable<Cart[]>;
+  carts: Observable<ICartState>;
 
   constructor(private store: Store<AppState>) {
     this.carts = store.select('cart');
@@ -19,5 +19,4 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

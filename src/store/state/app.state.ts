@@ -1,7 +1,7 @@
 import { Product } from '../../models/product.model';
-import { Cart } from '../../models/cart.model';
+import { ICartState } from './cart.state';
 
 export interface AppState {
   readonly product: Product[];
-  readonly cart: Cart[];
+  readonly cart: ICartState;
 }
