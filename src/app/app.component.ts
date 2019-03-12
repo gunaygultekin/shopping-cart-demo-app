@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from '../store/state/app.state';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +10,7 @@ export class AppComponent {
 
   isShowShoppingCart: boolean;
 
-  // inject the store to our app.component
-  constructor(private store: Store<AppState>) {
-    this.isShowShoppingCart = false;
-  }
+  constructor() {}
 
   toggleShow() {
     this.isShowShoppingCart = !this.isShowShoppingCart;

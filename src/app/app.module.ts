@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { StoreModule } from '@ngrx/store';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { cartReducer } from '../store/reducers/cart.reducer';
+import { DataSharingService } from '../services/data.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { cartReducer } from '../store/reducers/cart.reducer';
       cart: cartReducer
     })
   ],
-  providers: [],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
