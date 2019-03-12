@@ -8,18 +8,22 @@ import { ProductCreateComponent } from './product-create/product-create.componen
 import { ProductComponent } from './product/product.component';
 
 import { StoreModule } from '@ngrx/store';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { cartReducer } from '../store/reducers/cart.reducer';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductCreateComponent,
-    ProductComponent
+    ProductComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      product: productReducer
+      product: productReducer,
+      cart: cartReducer
     })
   ],
   providers: [],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../store/state/app.state';
-import * as TutorialActions from '../../store/actions/product.actions';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../store/state/app.state';
+import * as ProductActions from '../../store/actions/product.actions';
 
 @Component({
   selector: 'app-product-create',
@@ -17,7 +17,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   addProduct(id, name, price) {
-    this.store.dispatch(new TutorialActions.AddProduct({id, name, price}));
+    this.store.dispatch(new ProductActions.AddProduct({id, name, price}));
     this.isSuccess = true;
   }
 

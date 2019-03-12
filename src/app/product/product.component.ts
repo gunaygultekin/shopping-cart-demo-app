@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/index';
 import { Product } from '../../models/product.model';
 import { AppState } from '../../store/state/app.state';
 import { Store } from '@ngrx/store';
+import * as CartActions from '../../store/actions/cart.actions';
 
 @Component({
   selector: 'app-product',
@@ -20,4 +21,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  addToShoppingCartList(product: Product) {
+    this.store.dispatch(new CartActions.Add(product));
+  }
 }

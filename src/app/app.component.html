@@ -20,6 +20,9 @@
             <img _ngcontent-c0="" height="100" src="http://simpleicon.com/wp-content/uploads/shopping-cart-8-64x64.png" width="auto"
                  style="height: 30px;filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);">
           </a>
+          <div class="dropdown-menu dropdown-menu-right" ngClass="{{isShowShoppingCart ? 'show' : ''}}" >
+            <app-shopping-cart *ngIf="isShowShoppingCart"></app-shopping-cart>
+          </div>
         </li>
       </ul>
     </form>

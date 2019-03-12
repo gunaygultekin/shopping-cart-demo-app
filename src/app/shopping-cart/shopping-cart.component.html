@@ -1,0 +1,25 @@
+<ul class="list-group">
+  <li *ngFor="let product of carts |async"
+      class="list-group-item product d-flex justify-content-between align-items-center">
+    <button class="plus-btn" type="button" name="button" (click)="removeFromCart(product)">
+      <img src="../../../assets/delete-icn.svg" alt=""/>
+    </button>
+
+    <span class="name">{{product.name}}</span>
+
+    <span class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="../../../assets/plus.svg" alt=""/>
+        </button>
+
+        <input type="text" name="quantity" value="{{product.count}}">
+
+        <button class="minus-btn" type="button" name="button">
+          <img src="../../../assets/minus.svg" alt=""/>
+        </button>
+      </span>
+
+    <span class="price">{{product.price}}</span> TL
+    <span class="total-price"> Total Price: {{product.count * product.price}}</span> TL
+  </li>
+</ul>
