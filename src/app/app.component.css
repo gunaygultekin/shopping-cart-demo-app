@@ -1,3 +1,6 @@
 .dropdown-menu.dropdown-menu-right.show {
   background-color: #00ff16eb;
 }
+.nav-item.nav-link.mr-md-2:hover {
+  cursor: pointer;
+}
