@@ -10,12 +10,11 @@ const initialState: Product = {
 
 export function productReducer(
   state: Product[] = [initialState],
-  // state: Product[],
   action: ProductActions.Actions
 ) {
 
   switch (action.type) {
-    case ProductActions.ADD_TUTORIAL:
+    case ProductActions.ADD_PRODUCT:
       return [...state, action.payload];
     default:
       return state;

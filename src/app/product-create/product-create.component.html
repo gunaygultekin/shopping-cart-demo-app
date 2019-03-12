@@ -1,3 +1,8 @@
-<p>
-  product-create works!
-</p>
+<div class="left">
+
+  <input type="text" placeholder="id" #id>
+  <input type="text" placeholder="name" #name>
+  <input type="text" placeholder="price" #price>
+
+  <button (click)="addProduct(id.value,name.value,price.value)">Add a Product</button>
+</div>
