@@ -8,13 +8,16 @@
   <div class="form-group mx-sm-3 mb-2">
     <input type="text" class="form-control" placeholder="price" #price>
   </div>
-  <button (click)="addProduct(id.value,name.value,price.value)"
+  <div class="form-group mx-sm-3 mb-2">
+    <input type="text" class="form-control" placeholder="amount" #amount>
+  </div>
+  <button (click)="addProduct(id.value,name.value,price.value, amount.value)"
           class="btn btn-success mb-2" >Add A Product</button>
-  <button (click)="clear(id,name,price)"
+  <button (click)="clear(id,name,price,amount)"
           class="btn btn-primary mb-2 ml-2">Clear Inputs</button>
 </div>
+
 
 <div class="alert alert-light" role="alert" *ngIf="isSuccess">
   The product is added successfully. Check <a routerLink="/products" class="alert-link">Products</a> page.
 </div>
-

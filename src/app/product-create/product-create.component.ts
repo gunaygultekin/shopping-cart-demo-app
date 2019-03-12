@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Store} from '@ngrx/store';
-import {AppState} from '../../store/state/app.state';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../store/state/app.state';
 import * as ProductActions from '../../store/actions/product.actions';
 
 @Component({
@@ -16,15 +16,16 @@ export class ProductCreateComponent implements OnInit {
     this.isSuccess = false;
   }
 
-  addProduct(id, name, price) {
-    this.store.dispatch(new ProductActions.AddProduct({id, name, price}));
+  addProduct(id, name, price, amount, quantity = 1) {
+    this.store.dispatch(new ProductActions.AddProduct({id, name, price, amount, quantity}));
     this.isSuccess = true;
   }
 
-  clear(id, name, price) {
+  clear(id, name, price, amount) {
     id.value = '';
     name.value = '';
     price.value = '';
+    amount.value = '';
     this.isSuccess = false;
   }
 

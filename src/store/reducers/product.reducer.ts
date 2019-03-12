@@ -5,7 +5,9 @@ import * as ProductActions from '../actions/product.actions';
 const initialState: Product = {
   id: 1,
   name: 'Patates',
-  price: 30
+  price: 30,
+  amount: 100,
+  quantity: 1
 };
 
 export function productReducer(
