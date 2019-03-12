@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +10,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        ShoppingCartComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +22,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'shopping-cart-demo-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('shopping-cart-demo-app');
-  });
-
-  it('should render title in a h1 tag', () => {
+  it('should have a navbar-brand title in a tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to shopping-cart-demo-app!');
+    expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Angular - NGRX / Günay Gültekin');
   });
 });
