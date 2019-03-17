@@ -20,14 +20,26 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Remove a selected product from the cart
+   * @param product instance
+   */
   removeItemFromCart(product) {
     this.store.dispatch(new CartActions.Remove(product));
   }
 
+  /**
+   * Increase the amount of selected product
+   * @param product instance
+   */
   increaseItemCount(product) {
     this.store.dispatch(new CartActions.Add(product));
   }
 
+  /**
+   * Decrease the amount of selected product
+   * @param product instance
+   */
   decreaseItemCount(product) {
     this.store.dispatch(new CartActions.Decrease(product));
   }

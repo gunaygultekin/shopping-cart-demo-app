@@ -20,6 +20,12 @@ export function cartReducer(
   }
 }
 
+/**
+ * Add a product to shop cart and update it's state
+ * @param cart state interface
+ * @param payload product instance
+ * @returns cart state
+ */
 function pushToCart(cart: ICartState, payload: Product): ICartState {
   payload.amount -= 1;
   cart.count += 1;
@@ -28,6 +34,12 @@ function pushToCart(cart: ICartState, payload: Product): ICartState {
   return cart;
 }
 
+/**
+ * Decrease the number of a product from the shop cart and update it's state
+ * @param cart state interface
+ * @param payload product instance
+ * @returns cart state
+ */
 function pullFromCart(cart: ICartState, payload: Product): ICartState {
   const targetItem = cart.shoppingCardItems.find(item => item.id === payload.id);
   if (targetItem) {
@@ -45,6 +57,12 @@ function pullFromCart(cart: ICartState, payload: Product): ICartState {
   return cart;
 }
 
+/**
+ * Remove a product from the shop cart and update it's state
+ * @param cart state interface
+ * @param payload product instance
+ * @returns cart state
+ */
 function removeFromCart(cart: ICartState, payload: Product): ICartState {
   const targetItem = cart.shoppingCardItems.find(item => item.id === payload.id);
   if (targetItem) {
@@ -59,6 +77,11 @@ function removeFromCart(cart: ICartState, payload: Product): ICartState {
   return cart;
 }
 
+/**
+ * Update target item's quantity and shop cart state
+ * @param shopCart cart state
+ * @param payload product instance
+ */
 function updateItems(shopCart: ICartState, payload: Product) {
   const targetItem = shopCart.shoppingCardItems.find(item => item.id === payload.id);
   if (targetItem) {

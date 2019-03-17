@@ -12,14 +12,18 @@ import * as CartActions from '../../store/actions/cart.actions';
 })
 export class ProductComponent implements OnInit {
 
-  products: Observable<Product[]>;
+  products: Observable<Product[]>; // this is used in component's html
 
   constructor(private store: Store<AppState>) {
-    this.products = store.select('product');
+    this.products = store.select('product'); // get products from State Management
   }
 
   ngOnInit() {}
 
+  /**
+   * Add a product to the cart
+   * @param product instance
+   */
   addToShoppingCartList(product: Product) {
     this.store.dispatch(new CartActions.Add(product));
   }

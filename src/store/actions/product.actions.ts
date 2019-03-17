@@ -9,13 +9,18 @@ import { Product } from '../../models/product.model';
 export const ADD_PRODUCT       = '[Product] Add';
 export const REMOVE_PRODUCT    = '[Product] Remove';
 
-
+/**
+ * Add an item to the product list
+ */
 export class AddProduct implements Action {
   // public readonly type = EProductActions.Add_Product;
   readonly type = ADD_PRODUCT;
   constructor(public  payload: Product) {}
 }
 
+/**
+ * Remove an item from the product list
+ */
 export class RemoveProduct implements Action {
   // public readonly type = EProductActions.Remove_Product;
   readonly type = REMOVE_PRODUCT;

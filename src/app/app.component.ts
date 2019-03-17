@@ -12,6 +12,9 @@ export class AppComponent {
 
   constructor() {}
 
+  /**
+   * Show cart by user clicks the shopping cart icon
+   */
   toggleShow() {
     this.isShowShoppingCart = !this.isShowShoppingCart;
   }
